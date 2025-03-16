@@ -1,0 +1,17 @@
+.catalog__holder {
+    width: 100%;
+    height: auto;
+    border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 90px;
+    padding: 0 30px 0 30px;
+    gap: 15px;
+    @media screen and (max-width: 1291px) {
+        & {
+          justify-content: center;  
+          gap: 40px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/* Скидання відступів, полів і обрамлення */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Уніфікований стиль для шрифтів */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* Видалення спискових стилів */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Вирівнювання заголовків */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+  
+  /* Скидання стилів для посилань */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Видалення стилів для кнопок */
+  button, input, textarea, select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  /* Уніфікація зображень */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Скидання стилів для таблиць */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  

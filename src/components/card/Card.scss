@@ -1,0 +1,33 @@
+.card{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__section{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__name {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-button{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5px;
+            cursor: pointer;
+            div{
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #000;
+            }
+
+        }
+    }
+}
