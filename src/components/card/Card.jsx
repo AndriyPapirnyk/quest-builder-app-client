@@ -3,7 +3,7 @@ import './Card.scss'
 import CardMenu from '../cardMenu/CardMenu';
 import { useState } from 'react';
 
-const Card = ({title, description, questions}) => {
+const Card = ({title, description, questions, quiz, onDelete}) => {
   const [menuStatus, setmenuStatus] = useState(false)
 
   function getQuestionsAmount(questions) {
@@ -16,7 +16,7 @@ const Card = ({title, description, questions}) => {
 
   return (
     <div className='card'>
-      {menuStatus && <CardMenu />}
+      {menuStatus && <CardMenu onDelete={onDelete} quiz={quiz}/>}
         <div className="card__section">
         <div className="card__name">
             <h2>{title}</h2>

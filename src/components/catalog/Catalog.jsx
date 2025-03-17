@@ -10,7 +10,7 @@ const Catalog = () => {
     <div className='catalog'>
       <Header />
       <Holder />
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   )
 }
