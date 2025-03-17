@@ -1,5 +1,5 @@
 import React from 'react'
-import './CatalogHolder.scss'
+import './Holder.scss'
 import Card from '../card/Card'
 import axios from 'axios'
 import {useState, useEffect} from 'react'

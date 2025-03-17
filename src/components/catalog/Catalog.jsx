@@ -2,14 +2,14 @@ import React from 'react'
 import './Catalog.scss'
 
 import Header from '../header/Header'
-import CatalogHolder from "../catalogHolder/CatalogHolder";  
+import Holder from "../holder/Holder";  
 import Pagination from '../pagination/Pagination';
 
 const Catalog = () => {
   return (
     <div className='catalog'>
       <Header />
-      <CatalogHolder />
+      <Holder />
       <Pagination />
     </div>
   )
