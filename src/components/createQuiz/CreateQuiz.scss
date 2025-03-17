@@ -1,0 +1,64 @@
+.createQuiz {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__container{
+        width: 90%;
+        height: 100%;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+        
+          input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+        
+          button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        
+            &:hover {
+              background: #0056b3;
+            }
+          }
+        
+          .question {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        
+            .options {
+              margin-top: 5px;
+        
+              input {
+                width: calc(100% - 30px);
+                display: inline-block;
+              }
+        
+              button {
+                background: red;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+    }
