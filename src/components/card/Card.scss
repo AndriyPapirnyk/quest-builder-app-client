@@ -7,6 +7,27 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
+    position: relative;
+    &__menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 30px;
+        top: 25px;
+        button{
+            color: #999;
+            border: 1px solid #000;
+            &:nth-child(1) {
+                background-color: green;
+            }
+            &:nth-child(2) {
+                background-color: yellow;
+            }
+            &:nth-child(3) {
+                background-color: red;
+            }
+        }
+    }
     &__section{
         display: flex;
         flex-direction: column;
