@@ -1,21 +1,20 @@
 .catalog__holder {
     width: 100%;
     height: auto;
-    border: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px;
     gap: 15px;
     @media screen and (max-width: 1291px) {
-        & {
-          justify-content: center;  
-          gap: 40px;
-        }
+        height: 80vh;
+        border-bottom: 4px solid #fff;
+        overflow-y: scroll;
     }
     .pagination{
+      width: 130px;
       position: fixed;
-      left: calc(50% - 40px);
+      left: calc(50% - 65px);
       bottom: 20px;
       display: flex;
       justify-content: center;

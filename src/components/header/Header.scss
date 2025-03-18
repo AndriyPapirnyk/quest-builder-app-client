@@ -10,9 +10,15 @@
     padding: 0 30px;
     z-index: 2;
     background-color: #fff;
+    @media screen and (max-width: 525px){
+        padding: 0 15px;
+    }
     h1{
         color: rgb(125, 105, 241);
         font-weight: bold;
+        @media screen and (max-width: 525px){
+            font-size: 20px;
+        }
     }
     div{
         display: flex;

@@ -36,6 +36,9 @@
             position: absolute;
             top: 100px;
             left: 0;
+            @media screen and (max-width: 460px){
+              width: 100%;
+            }
           }
         
           button, select{
@@ -62,7 +65,10 @@
             height: 40px;
             padding: 0 15px;
             border-radius: 20px;
-            background-color: rgb(233, 230, 253)
+            background-color: rgb(233, 230, 253);
+            @media screen and (max-width: 460px){
+              width: 100%;
+            }
           }
 
           .questions-form{
