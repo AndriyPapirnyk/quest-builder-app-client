@@ -1,0 +1,67 @@
+.runQuiz{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    button{
+        height: 40px;
+        width: 100px;
+        border: 2px solid #999;
+        border-radius: 20px;
+        transition: .4s;
+        font-weight: bold;
+        color: #000;
+        &:hover{
+            background-color: rgb(125, 105, 241);
+            transition: .4s;
+            border: none;
+        }
+    }
+    p{
+        font-size: 25px;
+    }
+    input[type="text"]{
+        width: 300px;
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 20px;
+        background-color: rgb(233, 230, 253);
+        &:palceholder{
+            color: #000;
+        }
+    }
+    input[type="radio"], input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
+    }
+    label{
+        display: flex;
+        gap: 10px;
+    }
+    &__container{
+        width: 90%;
+        height: 100%;
+        position: relative;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(125, 105, 241);
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

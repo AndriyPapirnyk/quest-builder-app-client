@@ -10,7 +10,7 @@ const CreateQuiz = () => {
   const navigate = useNavigate();
 
   const addQuestion = () => {
-    setQuestions([...questions, { text: "", type: "text", options: [] }]);
+    setQuestions([...questions, { text: "", type: "text", options: [], correctAnswer: "" }]);
   };
 
   const handleQuestionChange = (index, field, value) => {
@@ -18,6 +18,7 @@ const CreateQuiz = () => {
     updatedQuestions[index][field] = value;
     if (field === "type" && value !== "text") {
       updatedQuestions[index].options = [""];
+      updatedQuestions[index].correctAnswer = "";
     }
     setQuestions(updatedQuestions);
   };
@@ -34,6 +35,22 @@ const CreateQuiz = () => {
     setQuestions(updatedQuestions);
   };
 
+  const handleCorrectAnswerChange = (qIndex, value) => {
+    const updatedQuestions = [...questions];
+    updatedQuestions[qIndex].correctAnswer = value;
+    setQuestions(updatedQuestions);
+  };
+
+  const handleCorrectMultipleAnswerChange = (qIndex, value) => {
+    const updatedQuestions = [...questions];
+    if (updatedQuestions[qIndex].correctAnswer.includes(value)) {
+      updatedQuestions[qIndex].correctAnswer = updatedQuestions[qIndex].correctAnswer.filter(ans => ans !== value);
+    } else {
+      updatedQuestions[qIndex].correctAnswer = [...updatedQuestions[qIndex].correctAnswer, value];
+    }
+    setQuestions(updatedQuestions);
+  };
+
   const removeQuestion = (index) => {
     setQuestions(questions.filter((_, i) => i !== index));
   };
@@ -46,27 +63,34 @@ const CreateQuiz = () => {
 
   const submitQuiz = async () => {
     try {
-      const token = localStorage.getItem('token'); // Отримуємо токен
+      const token = localStorage.getItem('token');
       if (!token) {
-        alert("Токен не знайдений. Будь ласка, увійдіть знову.");
+        alert("Будь ласка, увійдіть знову.");
         return;
       }
+
   
       await axios.post(
         "http://localhost:8000/quizzes",
         {
           title: quizTitle,
           description: quizDescription,
-          questions,
+          questions: questions.map(q => ({
+            text: q.text,
+            type: q.type,
+            options: q.options || [],
+            correctAnswers: Array.isArray(q.correctAnswer) ? q.correctAnswer : [q.correctAnswer], 
+          })),
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Додаємо токен у заголовок
+            Authorization: `Bearer ${token}`,
           },
-          withCredentials: true, // Якщо використовуєте куки для сесії
+          withCredentials: true,
         }
-      );
+      );         
       alert("Вікторина створена!");
+      navigate("/");
     } catch (error) {
       console.error("Помилка при створенні вікторини", error);
       alert("Помилка при створенні вікторини");
@@ -76,9 +100,6 @@ const CreateQuiz = () => {
   const handleQuit = () => {
     navigate("/");
   }
-  
-  
-  
 
   return (
     <div className="createQuiz">
@@ -102,9 +123,13 @@ const CreateQuiz = () => {
           </select>
           <button onClick={() => removeQuestion(qIndex)}>Delete</button>
           </div>
+          {q.type === "text" && (
+            <input type="text" placeholder="Correct Answer" value={q.correctAnswer} onChange={(e) => handleCorrectAnswerChange(qIndex, e.target.value)} />
+          )}
           {q.type !== "text" && q.options.map((opt, oIndex) => (
             <div className="content2" key={oIndex}>
               <input type="text" value={opt} onChange={(e) => handleOptionChange(qIndex, oIndex, e.target.value)} />
+              <input style={{width: 'auto'}} type={q.type === "single" ? "radio" : "checkbox"} name={`correct-${qIndex}`} checked={q.type === "single" ? q.correctAnswer === opt : q.correctAnswer.includes(opt)} onChange={() => q.type === "single" ? handleCorrectAnswerChange(qIndex, opt) : handleCorrectMultipleAnswerChange(qIndex, opt)} />
               <button onClick={() => removeOption(qIndex, oIndex)}>Delete</button>
             </div>
           ))}

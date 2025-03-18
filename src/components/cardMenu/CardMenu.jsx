@@ -8,10 +8,10 @@ const CardMenu = ({ quiz, onDelete }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token'); // Отримуємо токен з localStorage
+    const token = localStorage.getItem('token'); 
     if (token) {
-      const decoded = jwtDecode(token); // Декодуємо токен
-      setUser(decoded); // Зберігаємо користувача
+      const decoded = jwtDecode(token); 
+      setUser(decoded); 
     }
   }, []);
 
@@ -31,17 +31,19 @@ const CardMenu = ({ quiz, onDelete }) => {
       onDelete();
     } catch (error) {
       console.error("Помилка при видаленні вікторини", error);
-      alert("Не вдалося видалити вікторину");
     }
   };
 
   const handleEditQuiz = () => {  
     navigate('/change-quiz', { state: { quiz } });
   }
+  const handleRunQuiz = () => {  
+    navigate('/run-quiz', { state: { quiz } });
+  }
 
   return (
     <div className='card__menu'>
-      <button className='card__menu-button'>Run</button>
+      <button className='card__menu-button' onClick={handleRunQuiz}>Run</button>
       {user?.userId === quiz.createdBy && (
         <>
           <button className='card__menu-button' onClick={handleEditQuiz}>Edit</button>
