@@ -5,6 +5,7 @@ import "./reset.css";
 import CreateQuiz from "./components/createQuiz/CreateQuiz";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import ChangeQuiz from "./components/changeQuiz/ChangeQuiz";
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = localStorage.getItem("token");
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<PrivateRoute element={<Catalog />} />} />
         <Route path="/create-quiz" element={<PrivateRoute element={<CreateQuiz />} />} />
+        <Route path="/change-quiz" element={<PrivateRoute element={<ChangeQuiz />} />} />
       </Routes>
     </Router>
   );

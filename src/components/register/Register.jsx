@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Register.scss'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -28,16 +27,34 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Реєстрація</h2>
-      <form onSubmit={handleRegistration}>
-        <input type="text" placeholder="Логін" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <input type="password" placeholder="Повторіть пароль" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} />
-        <button type="submit">Створити</button>
+    <div className='login'>
+      <div className="login__container">
+      <div className="login__content">
+        <h1>Welcome to Quiz App!</h1>
+        <p>Welcome to QuizApp – a fun and interactive platform where <br /> you can create, share, and take quizzes on any topic! 🎉</p>
+      </div>
+      <form className='login__form' onSubmit={handleRegistration}>
+        <h2>USER REGISTRATION</h2>
+        <div>
+           <input type="text" placeholder="Логін" value={username} onChange={(e) => setUsername(e.target.value)} />
+           <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
+           <input type="password" placeholder="Повторіть пароль" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} />
+        </div>
+        <button type="submit">Register</button>
+        <p>You have an account? <a href="/login">Login</a></p>
       </form>
-      <p>Вже маєте акаунт? <a href="/login">Увійдіть</a></p>
+      </div>
     </div>
+    // <div>
+    //   <h2>Реєстрація</h2>
+    //   <form onSubmit={handleRegistration}>
+    //     <input type="text" placeholder="Логін" value={username} onChange={(e) => setUsername(e.target.value)} />
+    //     <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
+    //     <input type="password" placeholder="Повторіть пароль" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} />
+    //     <button type="submit">Створити</button>
+    //   </form>
+    //   <p>Вже маєте акаунт? <a href="/login">Увійдіть</a></p>
+    // </div>
   )
 }
 

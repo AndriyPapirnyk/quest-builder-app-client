@@ -20,14 +20,22 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Логін</h2>
-      <form onSubmit={handleLogin}>
-        <input type="text" placeholder="Логін" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Увійти</button>
+    <div className='login'>
+      <div className="login__container">
+      <div className="login__content">
+        <h1>Welcome to Quiz App!</h1>
+        <p>Welcome to QuizApp – a fun and interactive platform where <br /> you can create, share, and take quizzes on any topic! 🎉</p>
+      </div>
+      <form className='login__form' onSubmit={handleLogin}>
+        <h2>USER LOGIN</h2>
+        <div>
+          <input type="text" placeholder="Login" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <button type="submit">Login</button>
+        <p>Dont have an account? <a href="/register">Register</a></p>
       </form>
-      <p>Ще не маєте аккаут? <a href="/register">Створіть</a></p>
+      </div>
     </div>
   )
 }

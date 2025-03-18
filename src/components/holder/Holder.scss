@@ -17,7 +17,7 @@
     .pagination{
       width: 110px;
       border: 1px solid #000;
-      position: absolute;
+      position: fixed;
       left: calc(50% - 40px);
       bottom: 20px;
       display: flex;

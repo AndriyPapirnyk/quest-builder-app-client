@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CardMenu = ({ quiz, onDelete }) => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token'); // Отримуємо токен з localStorage
@@ -33,12 +35,16 @@ const CardMenu = ({ quiz, onDelete }) => {
     }
   };
 
+  const handleEditQuiz = () => {  
+    navigate('/change-quiz', { state: { quiz } });
+  }
+
   return (
     <div className='card__menu'>
       <button className='card__menu-button'>Run</button>
       {user?.userId === quiz.createdBy && (
         <>
-          <button className='card__menu-button'>Edit</button>
+          <button className='card__menu-button' onClick={handleEditQuiz}>Edit</button>
           <button className='card__menu-button' onClick={handleDeleteQuiz}>Delete</button>
         </>
       )}
