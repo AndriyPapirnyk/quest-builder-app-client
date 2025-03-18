@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Catalog from "./components/catalog/Catalog";
 import "./reset.css";

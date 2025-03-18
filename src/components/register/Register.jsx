@@ -45,16 +45,6 @@ const Register = () => {
       </form>
       </div>
     </div>
-    // <div>
-    //   <h2>Реєстрація</h2>
-    //   <form onSubmit={handleRegistration}>
-    //     <input type="text" placeholder="Логін" value={username} onChange={(e) => setUsername(e.target.value)} />
-    //     <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
-    //     <input type="password" placeholder="Повторіть пароль" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} />
-    //     <button type="submit">Створити</button>
-    //   </form>
-    //   <p>Вже маєте акаунт? <a href="/login">Увійдіть</a></p>
-    // </div>
   )
 }
 

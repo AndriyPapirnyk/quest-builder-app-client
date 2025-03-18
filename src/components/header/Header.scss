@@ -1,7 +1,6 @@
 .catalog__header {
     width: 100%;
     height: 90px;
-    border: 1px solid #000;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,12 +8,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
+    z-index: 2;
+    background-color: #fff;
+    h1{
+        color: rgb(125, 105, 241);
+        font-weight: bold;
+    }
     div{
         display: flex;
         gap: 15px;
-        button {
-            border: 1px solid #000;
-            cursor: pointer;
+        button{
+            height: 40px;
+            width: 100px;
+            border: 2px solid #999;
+            border-radius: 20px;
+            transition: .4s;
+            font-weight: bold;
+            &:hover{
+                background-color: rgb(125, 105, 241);
+                color: #fff;
+                transition: .4s;
+                border: none;
+            }
         }
     }
 }

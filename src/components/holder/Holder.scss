@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 90px;
+    // margin-top: 90px;
     padding: 30px;
     gap: 15px;
     @media screen and (max-width: 1291px) {
@@ -15,13 +15,22 @@
         }
     }
     .pagination{
-      width: 110px;
-      border: 1px solid #000;
       position: fixed;
       left: calc(50% - 40px);
       bottom: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #fff;
+      gap: 10px;
+      button{
+        width: 30px;
+        height: 30px;
+        background-image: url(https://www.freeiconspng.com/uploads/white-arrow-icon-5.png);
+        background-size: cover;
+        &:first-child{
+          transform: rotate(180deg);
+        }
+      }
     }
 }

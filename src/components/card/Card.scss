@@ -1,30 +1,33 @@
 .card{
     width: 400px;
     height: 200px;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
     position: relative;
+    color: #fff;
     &__menu{
         display: flex;
         flex-direction: column;
         position: absolute;
-        right: 30px;
-        top: 25px;
+        right: 40px;
+        top: 22px;
+        gap: 2px;
         button{
-            color: #999;
-            border: 1px solid #000;
-            &:nth-child(1) {
-                background-color: green;
-            }
-            &:nth-child(2) {
-                background-color: yellow;
-            }
-            &:nth-child(3) {
-                background-color: red;
+            height: 40px;
+            width: 100px;
+            border: 2px solid #999;
+            border-radius: 20px;
+            transition: .4s;
+            font-weight: bold;
+            color: #fff;
+            &:hover{
+                background-color: rgb(125, 105, 241);
+                transition: .4s;
+                border: none;
             }
         }
     }
@@ -39,15 +42,17 @@
         justify-content: space-between;
         align-items: center;
         &-button{
+            width: 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1.5px;
             cursor: pointer;
             div{
                 width: 5px;
                 height: 5px;
                 border-radius: 50%;
-                background-color: #000;
+                background-color: #fff;
             }
 
         }

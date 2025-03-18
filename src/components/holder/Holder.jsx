@@ -39,17 +39,13 @@ const CatalogHolder = () => {
           className="pagination-button"
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={page === 1}
-        >
-          Мин
-        </button>
+        ></button>
         <span>{page} з {totalPages}</span>
         <button 
           className="pagination-button"
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
-        >
-          Нас
-        </button>
+        ></button>
       </div>
     </section>
   );

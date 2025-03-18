@@ -1,4 +1,13 @@
 .catalog {
     width: 100%;
-    height: 100%;
+    height: calc(100vh);
+    background: rgb(72,58,185);
+    background: linear-gradient(165deg, rgba(72,58,185,1) 35%, rgba(199,0,255,1) 100%);   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+// .catalog__holder{
+//     margin-top: 90px;
+// }
