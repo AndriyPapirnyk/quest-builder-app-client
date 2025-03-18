@@ -9,6 +9,7 @@ const Card = ({title, description, questions, quiz, onDelete}) => {
   function getQuestionsAmount(questions) {
     return questions.length;
   }
+  console.log(quiz)
 
   function showMenu() {
     setmenuStatus(!menuStatus)
@@ -26,7 +27,7 @@ const Card = ({title, description, questions, quiz, onDelete}) => {
         </div>
         <p className='card__description'>{description}</p>
         </div>
-        <div className="card__questions">Questions: {getQuestionsAmount(questions)}</div>
+        <div className="card__questions">Questions: {getQuestionsAmount(questions)},  Completions: {quiz.completions}</div>
     </div>
   )
 }
