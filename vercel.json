@@ -11,6 +11,14 @@
         {
             "src": "/login",
             "dest": "/"
+        },
+        {
+            "src": "/create-quiz",
+            "dest": "/"
+        },
+        {
+            "src": "/change-quiz",
+            "dest": "/"
         }
     ]
 }
