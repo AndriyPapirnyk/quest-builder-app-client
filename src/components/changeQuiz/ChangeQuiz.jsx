@@ -74,7 +74,7 @@ const ChangeQuiz = () => {
       }
 
       await axios.put(
-        `http://localhost:8000/quizzes/${quiz._id}`,
+        `https://quest-builder-app-45ef45724967.herokuapp.com/quizzes/${quiz._id}`,
         {
           title: quizTitle,
           description: quizDescription,

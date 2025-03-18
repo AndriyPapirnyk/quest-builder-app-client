@@ -10,7 +10,7 @@ const CatalogHolder = () => {
   const limit = 5; 
   const fetchQuizzes = async (currentPage = 1) => {
     try {
-      const response = await axios.get(`http://localhost:8000/quizzes?page=${currentPage}&limit=${limit}`, { withCredentials: true });
+      const response = await axios.get(`https://quest-builder-app-45ef45724967.herokuapp.com/quizzes?page=${currentPage}&limit=${limit}`, { withCredentials: true });
       setQuizzes(response.data.quizzes);
       setTotalPages(response.data.totalPages);
     } catch (err) {

@@ -17,7 +17,7 @@ const PlayQuiz = () => {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/quizzes/${quizId}`);
+        const response = await axios.get(`https://quest-builder-app-45ef45724967.herokuapp.com/quizzes/${quizId}`);
         setQuiz(response.data);
         setStartTime(Date.now());
       } catch (error) {
@@ -41,7 +41,7 @@ const PlayQuiz = () => {
     setCompletionTime(timeSpent);
     
     try {
-      const response = await axios.post(`http://localhost:8000/quizzes/${quizId}/submit`, {
+      const response = await axios.post(`https://quest-builder-app-45ef45724967.herokuapp.com/quizzes/${quizId}/submit`, {
         answers,
         timeSpent,
       });

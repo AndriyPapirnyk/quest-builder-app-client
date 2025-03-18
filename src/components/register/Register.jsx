@@ -17,7 +17,7 @@ const Register = () => {
     }
 
     try {
-        await axios.post("http://localhost:8000/register", { password: password, username: username });
+        await axios.post("https://quest-builder-app-45ef45724967.herokuapp.com/register", { password: password, username: username });
         alert("Реєстрація успішна! Тепер увійдіть.");
         navigate("/login");
     } catch (error) {

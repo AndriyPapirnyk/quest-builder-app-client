@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/login", { username, password });
+      const res = await axios.post("https://quest-builder-app-45ef45724967.herokuapp.com/login", { username, password });
       localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (error) {

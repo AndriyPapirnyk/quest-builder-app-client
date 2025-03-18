@@ -71,7 +71,7 @@ const CreateQuiz = () => {
 
   
       await axios.post(
-        "http://localhost:8000/quizzes",
+        "https://quest-builder-app-45ef45724967.herokuapp.com/quizzes",
         {
           title: quizTitle,
           description: quizDescription,

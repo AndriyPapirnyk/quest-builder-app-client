@@ -23,7 +23,7 @@ const CardMenu = ({ quiz, onDelete }) => {
 
     try {
         console.log(user.userId === quiz.createdBy);
-      await axios.delete(`http://localhost:8000/quizzes/${quiz._id}`, {
+      await axios.delete(`https://quest-builder-app-45ef45724967.herokuapp.com/quizzes/${quiz._id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
 
